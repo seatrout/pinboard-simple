@@ -1,24 +1,15 @@
-chrome.commands.onCommand.addListener(function (command) {
-  switch (command) {
-    case 'save':
-      Pinboard.save();
-      break;
-    case 'read_later':
-      Pinboard.readLater();
-      break;
-    case 'saveTabs':
-      Pinboard.saveTabs();
-      break;
-    case 'all':
-      Pinboard.all();
-      break;
-    case 'unread':
-      Pinboard.unread();
-      break;
-    case 'random':
-      Pinboard.random();
-      break;
-    default:
-      break;
+chrome.commands.onCommand.addListener((command) => {
+  if (command === 'save') {
+    Pinboard.save();
+  } else if (command === 'saveTabs') {
+    Pinboard.saveTabs();
+  } else if (command === 'read_later') {
+    Pinboard.readLater();
+  } else if (command === 'all') {
+    Pinboard.all();
+  } else if (command === 'unread') {
+    Pinboard.unread();
+  } else if (command === 'random') {
+    Pinboard.random();
   }
 });

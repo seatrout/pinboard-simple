@@ -27,13 +27,19 @@ Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/pinboa
 Install dependencies:
 
 ```bash
-$ npm install
+npm install
 ```
 
 Build extension:
 
 ```bash
-$ npm run build
+npm run build
+```
+
+Package extension:
+
+```bash
+npm run release
 ```
 
 ## License

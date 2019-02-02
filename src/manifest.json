@@ -1,10 +1,29 @@
 {
-  "name": "Pinboard Pro",
-  "version": "",
   "manifest_version": 2,
+  "name": "Pinboard Simple",
+  "version": "",
   "description": "Google Chrome extension for Pinboard (https://pinboard.in).",
-  "author": "Richard Käll",
-  "homepage_url": "http://richardkall.se/google-chrome-extension-for-pinboard-in-pinboard-pro/",
+  "author": "Ali Karbassi",
+  "homepage_url": "https://github.com/karbassi/pinboard-pro-chrome-extension",
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon-19.png",
+      "38": "images/icon-38.png"
+    },
+    "default_title": "Pinboard",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "js/pinboard.js",
+      "js/background.js"
+    ]
+  },
   "commands": {
     "save": {
       "suggested_key": {
@@ -41,24 +60,6 @@
       "description": "Random unread"
     }
   },
-  "icons": {
-    "16": "images/icon-16.png",
-    "128": "images/icon-128.png"
-  },
-  "background": {
-    "scripts": [
-      "js/pinboard.js",
-      "js/background.js"
-    ]
-  },
-  "browser_action": {
-    "default_icon": {
-      "19": "images/icon-19.png",
-      "38": "images/icon-38.png"
-    },
-    "default_title": "Pinboard",
-    "default_popup": "popup.html"
-  },
   "options_ui": {
     "page": "options.html",
     "chrome_style": true
@@ -68,6 +69,7 @@
     "activeTab",
     "https://pinboard.in/tabs/save/",
     "storage",
-    "tabs"
+    "tabs",
+    "https://pinboard.in/tabs/save/"
   ]
 }
