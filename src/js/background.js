@@ -6,6 +6,9 @@ chrome.commands.onCommand.addListener(function (command) {
     case 'read_later':
       Pinboard.readLater();
       break;
+    case 'saveTabs':
+      Pinboard.saveTabs();
+      break;
     case 'all':
       Pinboard.all();
       break;

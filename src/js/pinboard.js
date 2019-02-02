@@ -29,6 +29,33 @@ var Pinboard = { // eslint-disable-line no-unused-vars
       });
     });
   },
+  saveTabs: function () {
+    chrome.windows.getAll({ populate: true, windowTypes: ['normal'] }, function (windows) {
+      var list = [];
+      var i = 0;
+      var j = 0;
+      var postData = new FormData();
+      var request = new XMLHttpRequest();
+      var tabs = null;
+      var sublist = null;
+      for (; i < windows.length; i += 1) {
+        tabs = windows[i].tabs;
+        sublist = [];
+        for (j = 0; j < tabs.length; j += 1) {
+          sublist.push({ title: tabs[j].title, url: tabs[j].url });
+        }
+        list.push(sublist);
+      }
+      postData.append('data', JSON.stringify({ browser: 'chrome', windows: list }));
+      request.open('POST', BASE_URL + '/tabs/save/', true);
+      request.onreadystatechange = function () {
+        if (request.readyState === 4) {
+          chrome.tabs.create({ url: BASE_URL + '/tabs/show/' });
+        }
+      };
+      request.send(postData);
+    });
+  },
   unread: function () {
     chrome.tabs.create({ url: BASE_URL + '/toread/' });
   }

@@ -20,6 +20,9 @@
       },
       "description": "Read later"
     },
+    "save_tabs": {
+      "description": "Save all tabs"
+    },
     "all": {
       "suggested_key": {
         "default": "Ctrl+Shift+A",
@@ -63,6 +66,7 @@
   "options_page": "options.html",
   "permissions": [
     "activeTab",
+    "https://pinboard.in/tabs/save/",
     "storage",
     "tabs"
   ]

@@ -19,7 +19,7 @@ function updateStatus() {
 
 function saveOptions() {
   var visibleItems = {};
-  var items = ['all', 'random', 'readLater', 'save', 'unread'];
+  var items = ['all', 'random', 'readLater', 'save', 'saveTabs', 'unread'];
 
   items.forEach(function (item) {
     visibleItems[item] = document.querySelector('.js-show-' + item).checked;

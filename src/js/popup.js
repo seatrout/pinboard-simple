@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var items = ['all', 'random', 'readLater', 'save', 'unread'];
+  var items = ['all', 'random', 'readLater', 'save', 'saveTabs', 'unread'];
 
   items.forEach(function (item) {
     document.querySelector('.js-' + item + ' a')
