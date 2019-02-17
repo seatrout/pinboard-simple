@@ -4,7 +4,9 @@
   "private": true,
   "description": "Google Chrome extension for Pinboard.in (https://pinboard.in).",
   "author": "Ali Karbassi (https://karbassi.com)",
-  "contributors": ["Richard Käll <richard.kall@me.com>"],
+  "contributors": [
+    "Richard Käll <richard.kall@me.com>"
+  ],
   "scripts": {
     "clean": "gulp clean",
     "lint": "eslint . --ignore-path .gitignore --fix",
@@ -14,20 +16,17 @@
     "release": "gulp release"
   },
   "devDependencies": {
-    "eslint": "^5.9.0",
+    "eslint": "^5.14.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-import": "^2.16.0",
     "gulp": "^4.0.0",
     "gulp-chrome-manifest": "0.0.13",
     "gulp-clean": "0.4.0",
-    "gulp-crx-pack": "^1.0.2",
     "gulp-htmlmin": "5.0.1",
     "gulp-if": "2.0.2",
-    "gulp-load-plugins": "1.5.0",
     "gulp-uglify-es": "^1.0.4",
     "gulp-useref": "3.1.6",
-    "gulp-zip": "4.2.0",
-    "run-sequence": "2.2.1"
+    "gulp-zip": "4.2.0"
   },
   "eslintConfig": {
     "extends": "airbnb-base",
