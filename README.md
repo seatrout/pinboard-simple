@@ -2,7 +2,7 @@
 
 > Google Chrome extension for Pinboard.in (https://pinboard.in).
 
-![Pinboard Simple](preview.jpg)
+![Pinboard Simple](preview.png)
 
 ## Features
 
