@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
   "name": "Pinboard Simple",
-  "version": "",
+  "version": "2.0.0",
   "description": "Google Chrome extension for Pinboard (https://pinboard.in).",
-  "author": "Ali Karbassi",
-  "homepage_url": "https://github.com/karbassi/pinboard-pro-chrome-extension",
+  "author": "Ali Karbassi (https://karbassi.com)",
+  "homepage_url": "https://github.com/karbassi/pinboard-simple",
   "icons": {
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
@@ -60,16 +60,15 @@
       "description": "Random unread"
     }
   },
-  "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  },
   "options_page": "options.html",
+  "options_ui": {
+    "chrome_style": true,
+    "page": "options.html"
+  },
   "permissions": [
-    "activeTab",
-    "https://pinboard.in/tabs/save/",
-    "storage",
     "tabs",
+    "activeTab",
+    "storage",
     "https://pinboard.in/tabs/save/"
   ]
 }

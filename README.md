@@ -1,13 +1,14 @@
-# Pinboard Pro [![Build Status](https://travis-ci.org/richardkall/pinboard-pro-chrome-extension.svg?branch=master)](https://travis-ci.org/richardkall/pinboard-pro-chrome-extension)
+# Pinboard Simple [![Build Status](https://travis-ci.org/karbassi/pinboard-simple.svg?branch=master)](https://travis-ci.org/karbassi/pinboard-simple) 
 
 > Google Chrome extension for Pinboard.in (https://pinboard.in).
 
-![Pinboard Pro](preview.jpg)
+![Pinboard Simple](preview.jpg)
 
 ## Features
 
 - Save new bookmarks
 - Quick-save for reading later
+- Save all Tabs 
 - Selected text automatically copied to description field
 - Keyboard shortcuts (customizable)
 - Customizable menu
@@ -20,7 +21,7 @@ The "Save bookmark"-dialog uses the official popup which means you have access t
 
 ## Install
 
-Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/pinboard-pro/pmgaobiflaffpllgnepmhcnbdhfgnpna).
+Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/pinboard-simple/ocaokamaldlnppomhcgjcclnaloaljhd).
 
 ## Development
 
@@ -44,4 +45,4 @@ npm run release
 
 ## License
 
-MIT &copy; [Richard Käll](http://richardkall.se)
+MIT &copy; [Ali Karbassi](https://karbassi.com) and [Richard Käll](http://richardkall.se)
