@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const items = ['all', 'random', 'readLater', 'save', 'saveTabs', 'unread'];
+  const items = ['all', 'random', 'readLater', 'save', 'fancysave', 'unread'];
 
   items.forEach((item) => {
     document.querySelector(`.js-${item} a`).addEventListener('click', Pinboard[item]);

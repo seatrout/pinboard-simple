@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Pinboard Simple",
-  "version": "2.0.0",
+  "name": "Pinboard Simple w fancysave",
+  "version": "2.5.4",
   "description": "Google Chrome extension for Pinboard (https://pinboard.in).",
   "author": "Ali Karbassi (https://karbassi.com)",
   "homepage_url": "https://github.com/karbassi/pinboard-simple",
@@ -14,7 +14,7 @@
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
     },
-    "default_title": "Pinboard",
+    "default_title": "Pinboard ACB",
     "default_popup": "popup.html"
   },
   "background": {
@@ -41,6 +41,9 @@
     },
     "save_tabs": {
       "description": "Save all tabs"
+    },
+    "fancysave": {
+      "description": "ACB Fancy save"
     },
     "all": {
       "suggested_key": {

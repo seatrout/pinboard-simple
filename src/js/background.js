@@ -1,8 +1,9 @@
 chrome.commands.onCommand.addListener((command) => {
   if (command === 'save') {
     Pinboard.save();
-  } else if (command === 'saveTabs') {
-    Pinboard.saveTabs();
+  } else if (command === 'fancysave') {
+    // eslint-disable-next-line no-unused-expressions
+    Pinboard.fancysave();
   } else if (command === 'read_later') {
     Pinboard.readLater();
   } else if (command === 'all') {

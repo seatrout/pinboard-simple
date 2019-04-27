@@ -16,7 +16,7 @@ const updateStatus = () => {
 
 const saveOptions = () => {
   const visibleItems = {};
-  const items = ['all', 'random', 'readLater', 'save', 'saveTabs', 'unread'];
+  const items = ['all', 'random', 'readLater', 'save', 'fancysave', 'unread'];
 
   items.forEach((item) => {
     visibleItems[item] = document.querySelector(`.js-show-${item}`).checked;

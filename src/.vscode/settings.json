@@ -1,0 +1,8 @@
+{
+    "jshint.options": {
+      "esversion": 6,
+      "-W030":true,
+      "-W024":true,
+    }
+ 
+}
