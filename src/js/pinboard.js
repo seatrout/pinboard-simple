@@ -30,6 +30,7 @@ const Pinboard = {
   },
 
   save() {
+    // debugger;
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const tab = tabs[0];
       chrome.tabs.executeScript(
@@ -54,6 +55,40 @@ const Pinboard = {
   fancysave() {
     // This is the original pinboard-particular bookmarklet
     // modified to suit my own purposes quite heavily
+    // eslint-disable-next-line no-unused-vars
+    function parseTags(description) {
+      this.description = description;
+      const tagKeywords = {
+        javascript: ['javascript', 'nerd'],
+        js: ['javascript', 'nerd'],
+        python: ['python', 'nerd'],
+        android: ['android', 'nerd'],
+        schism: 'Schism',
+        'Religion|Pope|Cardinal|Francis|Vatican': ['Press_Column', 'Catholic', 'Schism'],
+        'Bishop|Archbishop|Church|Vicar|Priest': ['Press_Column', 'Christianity'],
+        Trump: ['Politics', 'USA'],
+        'Islam|Fatwa|Muslim': ['Press_Column', 'Islam', 'religion', 'Race/Immigrants'],
+        'Online|youtube|twitter|facebook|troll|Google': ['culture_of_online_life', 'adtech'],
+        'dn.se|expressen|svd.se|ä|å|Sverige|Svenska': ['Sweden', 'Swedish'],
+        github: ['techie', 'nerd'],
+        'AI|Machine learning': 'AI',
+        'Asylsökande|ensamkommande': ['Swedish', 'Sweden', 'Race/Immigrants'],
+      };
+      // eslint-disable-next-line prefer-const
+      let tags = [];
+      //  console.log(this.description);
+      let re;
+      for (const [k, v] of Object.entries(tagKeywords)) {
+        //    console.log(k);
+        re = new RegExp('\\b' + k + '\\b', 'i');
+        if (re.test(this.description) === true) {
+          tags.push(v);
+        //     console.log(k, v);
+        }
+        // eslint-disable-next-line no-console
+      }
+      return (tags.toString());
+    }
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const tab = tabs[0];
       chrome.tabs.executeScript(
@@ -65,35 +100,37 @@ const Pinboard = {
           const url = encodeURIComponent(tab.url);
           const title = encodeURIComponent(tab.title);
           const description = encodeURIComponent(selection);
-          console.log(description);
           const tagKeywords = {
             javascript: ['javascript', 'nerd'],
             js: ['javascript', 'nerd'],
             python: ['python', 'nerd'],
             android: ['android', 'nerd'],
             schism: 'Schism',
-            'Pope|Cardinal|Francis|Vatican': ['Press_Column', 'Catholic', 'Schism'],
-            'Bishop|Archbishop|Church|Vicar|Priest': ['Press_Column', 'Christianity'],
+            'Religion|Pope|Cardinal|Francis|Vatican|Catholic': ['Press_Column', 'Catholic', 'Schism'],
+            'Bishops?|Archbishops?|Church(es)?|Vicars?|Priests?': ['Press_Column', 'Christianity'],
             Trump: ['Politics', 'USA'],
-            'Islam|Fatwa|Muslim': ['Press_Column', 'Islam', 'religion', 'Race/Immigrants'],
+            'Islam|Fatwa|Muslim|Imam|Mosque': ['Press_Column', 'Islam', 'religion', 'Race/Immigrants'],
             'Online|youtube|twitter|facebook|troll|Google': ['culture_of_online_life', 'adtech'],
             'dn.se|expressen|svd.se|ä|å|Sverige|Svenska': ['Sweden', 'Swedish'],
             github: ['techie', 'nerd'],
             'AI|Machine learning': 'AI',
             'Asylsökande|ensamkommande': ['Swedish', 'Sweden', 'Race/Immigrants'],
           };
-          const tags = [];
+          // eslint-disable-next-line prefer-const
+          let tags = [];
+          //  console.log(this.description);
           let re;
-          for (const keyword of Object.entries(tagKeywords)) {
-            re = keyword instanceof RegExp ? keyword : new RegExp('\\b' + keyword + '\\b', 'i');
-            if (re.test(description)) {
-              tags.push(tagKeywords[keyword]);
+          for (const [k, v] of Object.entries(tagKeywords)) {
+            // console.log(k);
+            re = new RegExp('\\b' + k + '\\b', 'i');
+            if (re.test(description) === true) {
+              tags.push(v);
+            //     console.log(k, v);
             }
             // eslint-disable-next-line no-console
-            console.log(tags);
           }
           window.open(
-            `${BASE_URL}/add?showtags=yes&url=${url}&title=${title}&description=${description}&tags=${tags}`,
+            `${BASE_URL}/add?showtags=yes&url=${url}&title=${title}&description=${description}&tags=${tags.toString()}`,
             'Pinboard',
             'toolbar=no,scrollbars=no,width=700,height=550'
           );

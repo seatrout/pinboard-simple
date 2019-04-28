@@ -30,10 +30,10 @@ function fancysave() {
   };
   const newLocal = (selection) => {
     // text = normalize(text);
-    let tags = [];
+    const tags = [];
     var re;
-    for (let keyword in Object.keys(tagKeywords)) {
-      re = keyword instanceof RegExp ? keyword : new RegExp('\\b' + keyword + '\\b', 'i');
+    for (const keyword in Object.keys(tagKeywords)) {
+      re = keyword instanceof RegExp ? keyword : new RegExp(`\\b${keyword}\\b`, 'i');
       if (re.test(text)) {
         tags.push(tagKeywords[keyword]);
       }
@@ -42,7 +42,7 @@ function fancysave() {
     return tags;
   };
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    const tab = tabs[0]
+    const tab = tabs[0];
     chrome.tabs.executeScript(
       tab.id,
       {
@@ -58,7 +58,7 @@ function fancysave() {
           'Pinboard',
           'toolbar=no,scrollbars=no,width=700,height=550',
         );
-      }
-    )
+      },
+    );
   });
 }

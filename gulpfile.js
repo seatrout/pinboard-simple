@@ -21,7 +21,8 @@ gulp.task('manifest', () => gulp.src('src/manifest.json')
   }))
   .pipe(gulpif(
     '*.js',
-    uglify(),
+    // eslint-disable-next-line comma-dangle
+    uglify()
   ))
   .pipe(gulp.dest('../build/src')));
 
