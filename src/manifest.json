@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "Pinboard Simple w fancysave",
-  "version": "2.6.2",
+  "version": "2.6.3",
   "description": "Google Chrome extension for Pinboard (https://pinboard.in).",
-  "author": "Ali Karbassi (https://karbassi.com)",
+  "author": "Ali Karbassi (https://karbassi.com), Andrew Brown (https://thewormbook.com",
   "homepage_url": "https://github.com/karbassi/pinboard-simple",
   "icons": {
     "16": "images/icon-16.png",

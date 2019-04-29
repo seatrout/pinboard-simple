@@ -51,11 +51,13 @@ const Pinboard = {
       );
     });
   },
-  /* eslint-disable no-var */
+  // eslint-disable no-var
+
   fancysave() {
     // This is the original pinboard-particular bookmarklet
     // modified to suit my own purposes quite heavily
     // eslint-disable-next-line no-unused-vars
+    /*
     function parseTags(description) {
       this.description = description;
       const tagKeywords = {
@@ -89,6 +91,7 @@ const Pinboard = {
       }
       return (tags.toString());
     }
+    */
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const tab = tabs[0];
       chrome.tabs.executeScript(
@@ -99,13 +102,11 @@ const Pinboard = {
         (selection) => {
           const url = encodeURIComponent(tab.url);
           const title = encodeURIComponent(tab.title);
-          const description = encodeURIComponent(selection);
+          let description = encodeURIComponent(selection);
+          description = '<blockquote>' + description + '</blockquote>';
           const tagKeywords = {
-            javascript: ['javascript', 'nerd'],
+            'javascript|python|groovy|java': ['nerd', 'techie'],
             js: ['javascript', 'nerd'],
-            python: ['python', 'nerd'],
-            android: ['android', 'nerd'],
-            schism: 'Schism',
             'Religion|Pope|Cardinal|Francis|Vatican|Catholic': ['Press_Column', 'Catholic', 'Schism'],
             'Bishops?|Archbishops?|Church(es)?|Vicars?|Priests?': ['Press_Column', 'Christianity'],
             Trump: ['Politics', 'USA'],
