@@ -115,6 +115,8 @@ const Pinboard = {
             'dn.se|expressen|svd.se|ä|å|Sverige|Svenska': ['Sweden', 'Swedish'],
             github: ['techie', 'nerd'],
             'AI|Machine learning': 'AI',
+            'Rekognition|facial-recognition|Xinjiang': ['AI', 'Security', 'surveillance'],
+            'migrants|migration': ['Race/Immigrants'],
             'Asylsökande|ensamkommande': ['Swedish', 'Sweden', 'Race/Immigrants'],
           };
           // eslint-disable-next-line prefer-const
