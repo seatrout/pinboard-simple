@@ -17,6 +17,12 @@
     "default_title": "Pinboard ACB",
     "default_popup": "popup.html"
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "acb-simple-pinboard@thewormbook.com",
+      "strict_min_version": "42.0"
+    }
+  },  
   "background": {
     "persistent": false,
     "scripts": [
@@ -27,7 +33,6 @@
   "commands": {
     "save": {
       "suggested_key": {
-        "default": "Ctrl+Shift+S",
         "mac": "MacCtrl+Shift+S"
       },
       "description": "Save bookmark"
@@ -43,7 +48,11 @@
       "description": "Save all tabs"
     },
     "fancysave": {
-      "description": "ACB Fancy save"
+      "suggested-key": {
+        "default":"Ctrl+Shift+S",
+        "mac": "MacCtrl+Shift+F12"
+      },
+      "description": "ACB fancysave"
     },
     "all": {
       "suggested_key": {
