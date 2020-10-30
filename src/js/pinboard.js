@@ -118,6 +118,7 @@ const Pinboard = {
             'Rekognition|facial-recognition|Xinjiang': ['AI', 'Security', 'surveillance'],
             'migrants|migration': ['Race/Immigrants'],
             'Asylsökande|ensamkommande': ['Swedish', 'Sweden', 'Race/Immigrants'],
+            'Brott|Åklagare|tingsrätt|mord': ['Swedish', 'Sweden', 'crime', 'Race/Immigrants'],
             'Coronavirus|Covid|SARS|MERS': ['covid19'],
           };
           // eslint-disable-next-line prefer-const
