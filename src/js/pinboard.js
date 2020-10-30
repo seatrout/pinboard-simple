@@ -119,6 +119,7 @@ const Pinboard = {
             'migrants|migration': ['Race/Immigrants'],
             'Asylsökande|ensamkommande': ['Swedish', 'Sweden', 'Race/Immigrants'],
             'Brott|Åklagare|tingsrätt|mord': ['Swedish', 'Sweden', 'crime', 'Race/Immigrants'],
+            'Islamist|terrorist|terror': ['Race/Immigrants', 'Crime','neofash','Islam'],
             'Coronavirus|Covid|SARS|MERS': ['covid19'],
           };
           // eslint-disable-next-line prefer-const
