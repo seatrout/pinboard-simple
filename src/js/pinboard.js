@@ -112,7 +112,7 @@ const Pinboard = {
             Trump: ['Politics', 'USA'],
             'Islam|Fatwa|Muslim|Imam|Mosque': ['Press_Column', 'Islam', 'religion', 'Race/Immigrants'],
             'Online|youtube|twitter|facebook|troll|Google': ['culture_of_online_life', 'adtech'],
-            'dn.se|expressen|svd.se|ä|å|Sverige|Svenska': ['Sweden', 'Swedish'],
+            'dn.se|expressen|svd.se|Sverige|Svenska': ['Sweden', 'Swedish'],
             github: ['techie', 'nerd'],
             'AI|Machine learning': 'AI',
             'Rekognition|facial-recognition|Xinjiang': ['AI', 'Security', 'surveillance'],
@@ -121,6 +121,9 @@ const Pinboard = {
             'Brott|Åklagare|tingsrätt|mord': ['Swedish', 'Sweden', 'crime', 'Race/Immigrants'],
             'Islamist|terrorist|terror': ['Race/Immigrants', 'Crime', 'neofash', 'Islam'],
             'Coronavirus|Covid|SARS|MERS': ['covid19'],
+          };
+          const SwedishLetters = {
+            'ö|ä|å': 'Swedish'
           };
           // eslint-disable-next-line prefer-const
           let tags = [];
@@ -133,6 +136,13 @@ const Pinboard = {
               tags.push(v);
             //     console.log(k, v);
             }
+            for (const [k, v] of Object.entries(SwedishLetters)) {
+              // console.log(k);
+              re = new RegExp(k, 'i');
+              if (re.test(description) === true) {
+                tags.push(v);
+              //     console.log(k, v);
+              }
             // eslint-disable-next-line no-console
           }
           window.open(
